@@ -12,7 +12,6 @@ Demo utilizada na live realizada no Canal .NET no dia 02/05, abordando Blazor, B
 
 # Demos
 
-- Blazor - Last experimental release
 - Blazor - Client Side
 - Blazor - Blazor Server Side
 - Blazor - Authentication with Google
