@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28822.285
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoBlazorOAuth", "DemoBlazorOAuth\DemoBlazorOAuth.csproj", "{C1C61D3D-9052-45C3-8F17-EBF2A5B8705B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoGoogleAuth", "DemoGoogleAuth.csproj", "{B0C45AAB-542D-44B9-9D58-70963029A887}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C1C61D3D-9052-45C3-8F17-EBF2A5B8705B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1C61D3D-9052-45C3-8F17-EBF2A5B8705B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1C61D3D-9052-45C3-8F17-EBF2A5B8705B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1C61D3D-9052-45C3-8F17-EBF2A5B8705B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0C45AAB-542D-44B9-9D58-70963029A887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C45AAB-542D-44B9-9D58-70963029A887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C45AAB-542D-44B9-9D58-70963029A887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C45AAB-542D-44B9-9D58-70963029A887}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A68163F7-587D-4342-A765-7EB20FC3A30A}
+		SolutionGuid = {B78579B9-1C3F-48FD-B0AA-968F28F25866}
 	EndGlobalSection
 EndGlobal

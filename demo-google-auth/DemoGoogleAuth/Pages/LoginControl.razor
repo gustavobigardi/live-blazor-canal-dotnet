@@ -1,0 +1,80 @@
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Http
+@page "/login"
+@inject IHttpContextAccessor _httpContextAccessor
+@inject HttpClient Http
+
+@if (User.Identity.Name != null)
+{
+    <img src="@Avatar" style="width: 32px; margin-right: 15px;" />
+    <b>Você está logado como: @GivenName @Surname</b>
+    <a class="ml-md-auto btn btn-primary"
+       href="/Logout"
+       target="_top">Logout</a>
+}
+else
+{
+    <a class="ml-md-auto btn btn-primary"
+       href="/Login"
+       target="_top">Login</a>
+}
+
+@functions {
+
+    private ClaimsPrincipal User;
+    private string GivenName;
+    private string Surname;
+    private string Avatar;
+
+    protected override void OnInit()
+    {
+        base.OnInit();
+
+        try
+        {
+            User = _httpContextAccessor.HttpContext.User;
+            var givenName =
+                _httpContextAccessor.HttpContext.User
+                .FindFirst(ClaimTypes.GivenName);
+
+            if (givenName != null)
+            {
+                GivenName = givenName.Value;
+            }
+            else
+            {
+                GivenName = User.Identity.Name;
+            }
+
+            var surname =
+                _httpContextAccessor.HttpContext.User
+                .FindFirst(ClaimTypes.Surname);
+
+            if (surname != null)
+            {
+                Surname = surname.Value;
+            }
+            else
+            {
+                Surname = "";
+            }
+
+            var avatar =
+                _httpContextAccessor.HttpContext.User
+                .FindFirst("urn:google:image");
+
+            if (avatar != null)
+            {
+                Avatar = avatar.Value;
+            }
+            else
+            {
+                Avatar = "";
+            }
+        }
+        catch (Exception ex)
+        {
+            throw;
+        }
+    }
+}

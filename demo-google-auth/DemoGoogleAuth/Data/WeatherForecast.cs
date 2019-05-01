@@ -1,6 +1,6 @@
 using System;
 
-namespace DemoBlazorOAuth.Data
+namespace DemoGoogleAuth.Data
 {
     public class WeatherForecast
     {
