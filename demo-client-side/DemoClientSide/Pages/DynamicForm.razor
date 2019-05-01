@@ -1,0 +1,29 @@
+﻿@page "/dynamic"
+
+<h1>Dynamic Form</h1>
+
+<input type="text" id="shopQty" bind="@shoppingQty" />
+
+<button class="btn btn-primary" onclick="@RenderComponents">Atualizar</button>
+
+<br />
+<br />
+<br />
+
+@for (int i = 0; i < products; i++)
+{
+    <label for="identifier-@i">Produto @i: </label>
+    <input type="text" id="product-@i" />
+    <br />
+    <br />
+}
+
+@functions {
+    string shoppingQty;
+    int products = 0;
+
+    void RenderComponents()
+    {
+        products = int.Parse(shoppingQty);
+    }
+}
