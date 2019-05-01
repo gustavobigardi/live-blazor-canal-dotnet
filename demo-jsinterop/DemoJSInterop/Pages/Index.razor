@@ -1,0 +1,44 @@
+﻿@page "/"
+@inject IJSRuntime JSRuntime
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<button type="button" class="btn btn-primary"
+        onclick="exampleJsFunctions.returnArrayAsyncJs()">
+    Trigger .NET static method ReturnArrayAsync
+</button>
+
+<button type="button" class="btn btn-primary" onclick="@TriggerNetInstanceMethod">
+    Trigger .NET instance method HelloHelper.SayHello
+</button>
+
+<button type="button" class="btn btn-primary" onclick="@TriggerPrompt">
+    Trigger .NET instance method HelloHelper.SayHello
+</button>
+
+<label>@Name</label>
+
+@functions {
+    private string Name { get; set; }
+
+    [JSInvokable]
+    public static Task<int[]> ReturnArrayAsync()
+    {
+        return Task.FromResult(new int[] { 1, 2, 3 });
+    }
+
+    public async void TriggerNetInstanceMethod()
+    {
+        var exampleJsInterop = new ExampleJsInterop(JSRuntime);
+        await exampleJsInterop.CallHelloHelperSayHello("Blazor");
+    }
+
+    public async void TriggerPrompt()
+    {
+        var exampleJsInterop = new ExampleJsInterop(JSRuntime);
+        Name = await exampleJsInterop.CallHelloHelperShowPrompt();
+        StateHasChanged();
+    }
+}

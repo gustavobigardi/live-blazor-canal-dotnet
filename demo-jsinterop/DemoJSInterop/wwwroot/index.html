@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>DemoJSInterop</title>
+    <base href="/" />
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <app>Loading...</app>
+
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script>
+        window.exampleJsFunctions = {
+            showPrompt: function (text) {
+                return prompt(text, 'Type your name here');
+            },
+            displayWelcome: function (welcomeMessage) {
+                document.getElementById('welcome').innerText = welcomeMessage;
+            },
+            returnArrayAsyncJs: function () {
+                DotNet.invokeMethodAsync('DemoJSInterop', 'ReturnArrayAsync')
+                    .then(data => {
+                        data.push(4);
+                        console.log(data);
+                    });
+            },
+            sayHello: function (dotnetHelper) {
+                return dotnetHelper.invokeMethodAsync('SayHello')
+                    .then(r => console.log(r));
+            }
+        };
+    </script>
+</body>
+</html>

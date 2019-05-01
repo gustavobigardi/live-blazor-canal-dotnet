@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Blazor.Hosting;
 
-namespace DemoChatJSInterop
+namespace DemoJSInterop
 {
     public class Program
     {
