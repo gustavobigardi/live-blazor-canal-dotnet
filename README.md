@@ -15,4 +15,4 @@ Demo utilizada na live realizada no Canal .NET no dia 02/05, abordando Blazor, B
 - Blazor - Client Side
 - Blazor - Blazor Server Side
 - Blazor - Authentication with Google
-- Blazor - Deploy client side chat application (with JS Interop) on Azure Storage + CDN
+- Blazor - JSInterop
